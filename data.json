@@ -22,13 +22,13 @@
   },
   "categories": [
     {
-      "name": "Ropa"
+      "name": "Audio"
     },
     {
-      "name": "Calzado"
+      "name": "Cargadores"
     },
     {
-      "name": "Electrónica"
+      "name": "Cables"
     },
     {
       "name": "Accesorios"
@@ -36,70 +36,37 @@
   ],
   "products": [
     {
-      "name": "Zapatillas Nike Air Max",
-      "priceRetail": "120.00",
+      "name": "AirPods Pro (2.ª generación) con ANC (Cancelación de Ruido) [CALIDAD PREMIUM]",
+      "priceRetail": "79.99",
       "status": "nuevo",
-      "priceWholesale": "95.00",
-      "link": "https://example.com/nike-air-max",
+      "priceWholesale": "55.00",
+      "link": "",
       "id": 1,
-      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=600&h=400",
-      "description": "Zapatillas de alta gama para correr, máxima comodidad y estilo.",
-      "category": "Calzado"
+      "image": "https://pe.tiendasishop.com/cdn/shop/files/IMG-14912675.jpg?v=1727286009&width=1000",
+      "description": "AirPods Pro (2ª gen) con cancelación activa de ruido (ANC), sonido envolvente, modo transparencia y carga USB-C. Máxima calidad, comodidad y conexión perfecta con dispositivos Apple",
+      "category": "Audio"
     },
     {
-      "name": "Camiseta Polo Ralph Lauren",
-      "priceRetail": "85.00",
-      "status": null,
+      "name": "AirPods Pro (3ª gen) con ANC (Cancelación de Ruido) y Traductor de Idiomas [CALIDAD PREMIUM]",
+      "priceRetail": "109.99",
+      "status": "nuevo",
       "priceWholesale": "65.00",
-      "link": "https://example.com/polo-ralph-lauren",
+      "link": "",
       "id": 2,
-      "image": "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&q=80&w=600&h=400",
-      "description": "Camiseta de algodón piqué con logo bordado, corte clásico.",
-      "category": "Ropa"
+      "image": "https://pe.tiendasishop.com/cdn/shop/files/IMG-18068726_m_jpeg_1.jpg?v=1757449899&width=1000",
+      "description": "AirPods Pro (3ª gen) con cancelación activa de ruido avanzada, audio espacial, traducción en tiempo real, sensor de frecuencia cardíaca y batería de larga duración.",
+      "category": "Audio"
     },
     {
-      "name": "Apple AirPods Pro 2",
-      "priceRetail": "249.00",
-      "status": "agotado",
-      "priceWholesale": "210.00",
-      "link": "https://example.com/airpods-pro-2",
+      "name": "Cargador apple 20w USB-C (Carga Rápida) [CALIDAD PREMIUM]",
+      "priceRetail": "25",
+      "status": "nuevo",
+      "priceWholesale": "10",
+      "link": "",
       "id": 3,
-      "image": "https://images.unsplash.com/photo-1588423770574-91993ca0a8b8?auto=format&fit=crop&q=80&w=600&h=400",
-      "description": "Cancelación activa de ruido, sonido espacial y estuche de carga MagSafe.",
-      "category": "Electrónica"
-    },
-    {
-      "name": "Gafas de Sol Ray-Ban Aviator",
-      "priceRetail": "150.00",
-      "status": "nuevo",
-      "priceWholesale": "120.00",
-      "link": "https://example.com/ray-ban-aviator",
-      "id": 4,
-      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=600&h=400",
-      "description": "Clásicas gafas de sol con montura dorada y lentes verdes polarizadas.",
-      "category": "Accesorios"
-    },
-    {
-      "name": "Mochila Herschel Heritage",
-      "priceRetail": "65.00",
-      "status": null,
-      "priceWholesale": "45.00",
-      "link": "https://example.com/herschel-backpack",
-      "id": 5,
-      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=600&h=400",
-      "description": "Mochila resistente con compartimento para portátil y diseño vintage.",
-      "category": "Accesorios"
-    },
-    {
-      "name": "Smartwatch Samsung Galaxy Watch 6",
-      "priceRetail": "299.00",
-      "status": "nuevo",
-      "priceWholesale": "260.00",
-      "link": "https://example.com/galaxy-watch-6",
-      "id": 6,
-      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600&h=400",
-      "description": "Seguimiento avanzado de salud, pantalla AMOLED y batería de larga duración.",
-      "category": "Electrónica"
+      "image": "https://pe.tiendasishop.com/cdn/shop/files/MHJA3AM_A-1.webp?v=1747085439&width=823",
+      "description": "Cargador original Apple 20W con carga rápida USB-C, diseño compacto y eficiente. Ideal para iPhone y dispositivos compatibles, ofreciendo una carga segura y veloz en todo momento",
+      "category": "Cargadores"
     }
   ]
 }
