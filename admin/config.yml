@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main # Asegúrate de que tu rama principal sea 'main'
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "config"
+    label: "Configuración General"
+    files:
+      - name: "site"
+        label: "Datos del Sitio"
+        file: "data.json"
+        fields:
+          - label: "Configuración del Sitio"
+            name: "siteConfig"
+            widget: "object"
+            fields:
+              - { label: "Nombre de la Tienda", name: "name", widget: "string" }
+              - { label: "Logo URL", name: "logo", widget: "image" }
+              - label: "Hero (Encabezado)", name: "hero", widget: "object", fields: [
+                  { label: "Título", name: "title", widget: "string" },
+                  { label: "Subtítulo", name: "subtitle", widget: "text" }
+                ]}
+              - label: "Redes Sociales", name: "social", widget: "object", fields: [
+                  { label: "WhatsApp (Número)", name: "whatsapp", widget: "string" },
+                  { label: "Instagram URL", name: "instagram", widget: "string", required: false },
+                  { label: "Facebook URL", name: "facebook", widget: "string", required: false },
+                  { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
+                ]}
+              - label: "Cinta de Anuncios (Scroll)", name: "ribbon", widget: "object", fields: [
+                  { label: "Habilitar", name: "enabled", widget: "boolean" },
+                  { label: "Texto de la cinta", name: "text", widget: "string" },
+                  { label: "Color de Fondo (Tailwind)", name: "backgroundColor", widget: "string", hint: "Ej: bg-black, bg-blue-600" },
+                  { label: "Color de Texto (Tailwind)", name: "textColor", widget: "string", hint: "Ej: text-white, text-yellow-400" }
+                ]}
+              - { label: "Texto del Pie de Página", name: "footerText", widget: "string" }
+          - label: "Categorías", name: "categories", widget: "list", field: { label: "Categoría", name: "category", widget: "string" }
+          - label: "Productos", name: "products", widget: "list", fields: [
+              { label: "ID", name: "id", widget: "number" },
+              { label: "Nombre", name: "name", widget: "string" },
+              { label: "Categoría", name: "category", widget: "select", collection: "config", file: "site", path: "categories" },
+              { label: "Estado", name: "status", widget: "select", options: ["nuevo", "agotado", {label: "Normal", value: null}], required: false },
+              { label: "Precio por Menor (S/.)", name: "priceRetail", widget: "string" },
+              { label: "Precio por Mayor (S/.)", name: "priceWholesale", widget: "string" },
+              { label: "Imagen", name: "image", widget: "image" },
+              { label: "Enlace (Opcional)", name: "link", widget: "string", required: false },
+              { label: "Descripción", name: "description", widget: "text" }
+            ]

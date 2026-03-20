@@ -1,0 +1,92 @@
+{
+  "siteConfig": {
+    "name": "EDUX IMPORT",
+    "logo": "https://via.placeholder.com/200x100?text=EDUX+IMPORT",
+    "hero": {
+      "title": "Catálogo EDUX IMPORT",
+      "subtitle": "Acceso consolidado a las mejores plataformas y productos exclusivos."
+    },
+    "social": {
+      "whatsapp": "+51900000000",
+      "instagram": "https://instagram.com/eduximport",
+      "facebook": "https://facebook.com/eduximport",
+      "tiktok": "https://tiktok.com/@eduximport"
+    },
+    "ribbon": {
+      "enabled": true,
+      "text": "🚀 ¡Nuevos ingresos de temporada! - 📦 Envíos a todo el Perú - 💎 Calidad garantizada en EDUX IMPORT - 🔥 Ofertas exclusivas por tiempo limitado",
+      "backgroundColor": "bg-black",
+      "textColor": "text-white"
+    },
+    "footerText": "EDUX IMPORT - Tu tienda de confianza para importaciones y productos exclusivos."
+  },
+  "categories": ["Ropa", "Calzado", "Electrónica", "Accesorios"],
+  "products": [
+    {
+      "id": 1,
+      "name": "Zapatillas Nike Air Max",
+      "category": "Calzado",
+      "status": "nuevo",
+      "priceRetail": "120.00",
+      "priceWholesale": "95.00",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=600&h=400",
+      "link": "https://example.com/nike-air-max",
+      "description": "Zapatillas de alta gama para correr, máxima comodidad y estilo."
+    },
+    {
+      "id": 2,
+      "name": "Camiseta Polo Ralph Lauren",
+      "category": "Ropa",
+      "status": null,
+      "priceRetail": "85.00",
+      "priceWholesale": "65.00",
+      "image": "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?auto=format&fit=crop&q=80&w=600&h=400",
+      "link": "https://example.com/polo-ralph-lauren",
+      "description": "Camiseta de algodón piqué con logo bordado, corte clásico."
+    },
+    {
+      "id": 3,
+      "name": "Apple AirPods Pro 2",
+      "category": "Electrónica",
+      "status": "agotado",
+      "priceRetail": "249.00",
+      "priceWholesale": "210.00",
+      "image": "https://images.unsplash.com/photo-1588423770574-91993ca0a8b8?auto=format&fit=crop&q=80&w=600&h=400",
+      "link": "https://example.com/airpods-pro-2",
+      "description": "Cancelación activa de ruido, sonido espacial y estuche de carga MagSafe."
+    },
+    {
+      "id": 4,
+      "name": "Gafas de Sol Ray-Ban Aviator",
+      "category": "Accesorios",
+      "status": "nuevo",
+      "priceRetail": "150.00",
+      "priceWholesale": "120.00",
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=600&h=400",
+      "link": "https://example.com/ray-ban-aviator",
+      "description": "Clásicas gafas de sol con montura dorada y lentes verdes polarizadas."
+    },
+    {
+        "id": 5,
+        "name": "Mochila Herschel Heritage",
+        "category": "Accesorios",
+        "status": null,
+        "priceRetail": "65.00",
+        "priceWholesale": "45.00",
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=600&h=400",
+        "link": "https://example.com/herschel-backpack",
+        "description": "Mochila resistente con compartimento para portátil y diseño vintage."
+    },
+    {
+        "id": 6,
+        "name": "Smartwatch Samsung Galaxy Watch 6",
+        "category": "Electrónica",
+        "status": "nuevo",
+        "priceRetail": "299.00",
+        "priceWholesale": "260.00",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600&h=400",
+        "link": "https://example.com/galaxy-watch-6",
+        "description": "Seguimiento avanzado de salud, pantalla AMOLED y batería de larga duración."
+    }
+  ]
+}
