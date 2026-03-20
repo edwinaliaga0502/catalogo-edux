@@ -1,5 +1,6 @@
 let allProducts = [];
 let siteData = {};
+const carouselState = {};
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
@@ -148,6 +149,18 @@ function renderProducts(products) {
     }
 
     products.forEach(product => {
+        const images = getProductImages(product);
+        const hasCarousel = images.length > 1;
+        const carouselControls = hasCarousel ? `
+                <button type="button" onclick="carouselPrev(${product.id})" class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors">
+                    <i class="fas fa-chevron-left text-sm"></i>
+                </button>
+                <button type="button" onclick="carouselNext(${product.id})" class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors">
+                    <i class="fas fa-chevron-right text-sm"></i>
+                </button>
+            ` : '';
+        const carouselDots = hasCarousel ? `<div id="product-dots-${product.id}" class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1"></div>` : '';
+
         const card = document.createElement('div');
         card.className = 'product-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col relative';
         
@@ -167,10 +180,12 @@ function renderProducts(products) {
         card.innerHTML = `
             ${statusBadge}
             <div class="relative h-64 overflow-hidden bg-gray-100 ${grayscaleClass}">
-                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                <img id="product-img-${product.id}" src="${images[0] ?? ''}" alt="${product.name}" class="w-full h-full object-cover">
                 <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-600 shadow-sm">
                     ${product.category}
                 </span>
+                ${carouselControls}
+                ${carouselDots}
             </div>
             <div class="p-5 flex flex-col flex-grow">
                 <h3 class="font-bold text-lg mb-2 line-clamp-1 text-gray-800">${product.name}</h3>
@@ -224,6 +239,7 @@ function renderProducts(products) {
             </div>
         `;
         grid.appendChild(card);
+        setCarousel(product.id, images);
     });
 }
 
@@ -270,3 +286,72 @@ function sendOrder(id) {
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
 }
 
+function getProductImages(product) {
+    const images = [];
+    if (typeof product.image === 'string' && product.image.trim()) {
+        images.push(product.image.trim());
+    }
+    if (Array.isArray(product.gallery)) {
+        product.gallery.forEach(item => {
+            if (typeof item === 'string' && item.trim()) {
+                images.push(item.trim());
+                return;
+            }
+            const src = item && typeof item === 'object' ? (item.src || item.image || item.url) : null;
+            if (typeof src === 'string' && src.trim()) {
+                images.push(src.trim());
+            }
+        });
+    }
+    return images.length ? images : ['https://via.placeholder.com/800x600?text=Sin+Imagen'];
+}
+
+function setCarousel(id, images) {
+    if (!Array.isArray(images) || images.length === 0) return;
+    const prev = carouselState[id];
+    const index = prev ? Math.min(prev.index, images.length - 1) : 0;
+    carouselState[id] = { images, index };
+    updateCarousel(id);
+}
+
+function updateCarousel(id) {
+    const state = carouselState[id];
+    if (!state) return;
+    const imgEl = document.getElementById(`product-img-${id}`);
+    if (!imgEl) return;
+    imgEl.src = state.images[state.index];
+
+    const dotsEl = document.getElementById(`product-dots-${id}`);
+    if (!dotsEl) return;
+    dotsEl.innerHTML = state.images
+        .map((_, i) => {
+            const cls = i === state.index
+                ? 'w-2 h-2 rounded-full bg-white shadow'
+                : 'w-2 h-2 rounded-full bg-white/50 hover:bg-white/80 shadow';
+            return `<button type="button" onclick="carouselGo(${id}, ${i})" class="${cls}"></button>`;
+        })
+        .join('');
+}
+
+function carouselPrev(id) {
+    const state = carouselState[id];
+    if (!state || state.images.length < 2) return;
+    state.index = (state.index - 1 + state.images.length) % state.images.length;
+    updateCarousel(id);
+}
+
+function carouselNext(id) {
+    const state = carouselState[id];
+    if (!state || state.images.length < 2) return;
+    state.index = (state.index + 1) % state.images.length;
+    updateCarousel(id);
+}
+
+function carouselGo(id, index) {
+    const state = carouselState[id];
+    if (!state || state.images.length < 2) return;
+    const nextIndex = Number(index);
+    if (!Number.isFinite(nextIndex)) return;
+    state.index = Math.max(0, Math.min(nextIndex, state.images.length - 1));
+    updateCarousel(id);
+}

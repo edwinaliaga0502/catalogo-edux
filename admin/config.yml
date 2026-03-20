@@ -41,10 +41,10 @@ collections:
                 name: "ribbon"
                 widget: "object"
                 fields:
-                  - { label: "Habilitar", name: "enabled", widget: "boolean" }
-                  - { label: "Texto de la cinta", name: "text", widget: "string" }
-                  - { label: "Color de Fondo (Tailwind)", name: "backgroundColor", widget: "string", hint: "Ej: bg-black, bg-blue-600" }
-                  - { label: "Color de Texto (Tailwind)", name: "textColor", widget: "string", hint: "Ej: text-white, text-yellow-400" }
+                  - { label: "Habilitar Cinta", name: "enabled", widget: "boolean" }
+                  - { label: "Texto de la cinta", name: "text", widget: "string", hint: "Escribe aquí tus ofertas o anuncios que se desplazan" }
+                  - { label: "Color de Fondo", name: "backgroundColor", widget: "string", hint: "Ej: bg-black (negro), bg-blue-600 (azul), bg-red-600 (rojo)" }
+                  - { label: "Color de Texto", name: "textColor", widget: "string", hint: "Ej: text-white (blanco), text-yellow-400 (amarillo)" }
               - label: "Texto del Pie de Página"
                 name: "footerText"
                 widget: "string"
@@ -70,6 +70,12 @@ collections:
                 required: false
               - { label: "Precio por Menor (S/.)", name: "priceRetail", widget: "string" }
               - { label: "Precio por Mayor (S/.)", name: "priceWholesale", widget: "string" }
-              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Imagen principal", name: "image", widget: "image" }
+              - label: "Galería (Imágenes extra)"
+                name: "gallery"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Imagen", name: "src", widget: "image" }
               - { label: "Enlace (Opcional)", name: "link", widget: "string", required: false }
               - { label: "Descripción", name: "description", widget: "text" }
