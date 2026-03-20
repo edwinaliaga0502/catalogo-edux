@@ -38,6 +38,11 @@
     {
       "name": "AirPods Pro (2.ª generación) con ANC (Cancelación de Ruido) [CALIDAD PREMIUM]",
       "priceRetail": "79.99",
+      "gallery": [
+        {
+          "src": "/images/uploads/001.png"
+        }
+      ],
       "status": "nuevo",
       "priceWholesale": "55.00",
       "link": "",
