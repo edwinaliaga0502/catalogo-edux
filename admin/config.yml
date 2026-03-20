@@ -60,7 +60,14 @@ collections:
               - { label: "ID", name: "id", widget: "number" }
               - { label: "Nombre", name: "name", widget: "string" }
               - { label: "Categoría", name: "category", widget: "string", hint: "Escribe el nombre exacto de la categoría" }
-              - { label: "Estado", name: "status", widget: "select", options: ["nuevo", "agotado", {label: "Normal", value: null}], required: false }
+              - label: "Estado"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "Normal", value: "" }
+                  - { label: "Nuevo", value: "nuevo" }
+                  - { label: "Agotado", value: "agotado" }
+                required: false
               - { label: "Precio por Menor (S/.)", name: "priceRetail", widget: "string" }
               - { label: "Precio por Mayor (S/.)", name: "priceWholesale", widget: "string" }
               - { label: "Imagen", name: "image", widget: "image" }
