@@ -20,7 +20,12 @@
     },
     "footerText": "EDUX IMPORT - Tu tienda de confianza para importaciones y productos exclusivos."
   },
-  "categories": ["Ropa", "Calzado", "Electrónica", "Accesorios"],
+  "categories": [
+    { "name": "Ropa" },
+    { "name": "Calzado" },
+    { "name": "Electrónica" },
+    { "name": "Accesorios" }
+  ],
   "products": [
     {
       "id": 1,

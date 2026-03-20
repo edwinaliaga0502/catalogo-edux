@@ -103,11 +103,12 @@ function renderCategories(categories) {
     container.innerHTML = '';
     container.appendChild(allBtn);
 
-    categories.forEach(category => {
+    categories.forEach(categoryObj => {
+        const categoryName = categoryObj.name;
         const btn = document.createElement('button');
         btn.className = 'px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm font-medium hover:border-blue-500 hover:text-blue-600 transition-all';
-        btn.textContent = category;
-        btn.onclick = () => filterCategory(category);
+        btn.textContent = categoryName;
+        btn.onclick = () => filterCategory(categoryName);
         container.appendChild(btn);
     });
 }

@@ -26,15 +26,15 @@ En el panel de Netlify de tu nuevo sitio:
 3. Baja hasta **Registration preferences**, dale a **Edit settings** y cámbialo a **"Invite only"**.
 4. Baja más hasta **Services** -> **Git Gateway** y haz clic en **"Enable Git Gateway"**.
 
-## Paso 5: Crear tu usuario para el Admin
+## Paso 4: Crear tu usuario para el Admin
 1. En la misma pestaña de **Identity**, haz clic en el botón **"Invite users"**.
 2. Escribe tu correo electrónico.
 3. Recibirás un correo de Netlify. Haz clic en el enlace, crea tu contraseña y ¡LISTO!
 
 ---
-### ¿Por qué la página sale en blanco?
-Si estás abriendo el archivo `admin/index.html` directamente desde tu computadora (haciendo doble clic), **siempre saldrá en blanco**. 
-El panel de administración **solo funciona cuando la web ya está subida a Netlify**, porque necesita conectarse con tu cuenta de GitHub para guardar los cambios.
+### ¿Por qué la página salía en blanco?
+1. **Mismatch de Datos**: He corregido la estructura interna de los archivos para que el panel de administración pueda leerlos correctamente.
+2. **Local vs Producción**: Recuerda que el panel de administración **solo funciona cuando la web ya está subida a Netlify**. Si intentas abrirlo desde tu computadora, siempre se verá en blanco o dará error.
 
 ---
 ### ¿Cómo editar?

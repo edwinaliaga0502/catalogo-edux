@@ -36,15 +36,21 @@ collections:
                   { label: "Color de Texto (Tailwind)", name: "textColor", widget: "string", hint: "Ej: text-white, text-yellow-400" }
                 ]}
               - { label: "Texto del Pie de Página", name: "footerText", widget: "string" }
-          - label: "Categorías", name: "categories", widget: "list", field: { label: "Categoría", name: "category", widget: "string" }
-          - label: "Productos", name: "products", widget: "list", fields: [
-              { label: "ID", name: "id", widget: "number" },
-              { label: "Nombre", name: "name", widget: "string" },
-              { label: "Categoría", name: "category", widget: "select", collection: "config", file: "site", path: "categories" },
-              { label: "Estado", name: "status", widget: "select", options: ["nuevo", "agotado", {label: "Normal", value: null}], required: false },
-              { label: "Precio por Menor (S/.)", name: "priceRetail", widget: "string" },
-              { label: "Precio por Mayor (S/.)", name: "priceWholesale", widget: "string" },
-              { label: "Imagen", name: "image", widget: "image" },
-              { label: "Enlace (Opcional)", name: "link", widget: "string", required: false },
-              { label: "Descripción", name: "description", widget: "text" }
-            ]
+          - label: "Categorías"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "Nombre de Categoría", name: "name", widget: "string" }
+          - label: "Productos"
+            name: "products"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Categoría", name: "category", widget: "string", hint: "Escribe el nombre exacto de la categoría" }
+              - { label: "Estado", name: "status", widget: "select", options: ["nuevo", "agotado", {label: "Normal", value: null}], required: false }
+              - { label: "Precio por Menor (S/.)", name: "priceRetail", widget: "string" }
+              - { label: "Precio por Mayor (S/.)", name: "priceWholesale", widget: "string" }
+              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Enlace (Opcional)", name: "link", widget: "string", required: false }
+              - { label: "Descripción", name: "description", widget: "text" }
